@@ -1,8 +1,7 @@
 import axios from "axios";
+import {api} from "./apiSettings";
 
-export default axios.create({
-  baseURL: "https://jsonplaceholder.typicode.com",
-  headers: {
-    "Content-type": "application/json"
-  }
+export const httpClient = axios.create({
+  baseURL: api.baseURL,
+  headers: {"Content-type": "application/json"}
 });
