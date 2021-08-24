@@ -1,12 +1,17 @@
 import { getPostsAction } from "../actions/PostActions";
 import { Dispatch } from "redux";
 import { PostActionTypes } from "../types/PostTypes";
-import axiosClient from "../../config/axiosConfig";
+import PostService from "../../services/PostService";
 
 export const getPosts = () => {
   return async function (dispatch: Dispatch<PostActionTypes>) {
-    const { data } = await axiosClient.get("/posts");
-    dispatch(getPostsAction(data));
-    return data;
+    try {
+      const { data } = await PostService.getAll();
+      dispatch(getPostsAction(data));
+      // return data;
+    } catch (error) {
+      console.log(error);
+      return error;
+    }
   };
 };
