@@ -17,7 +17,7 @@
 @media only screen and (max-width: $mobileScreen) {
   .container {
     grid-template-columns: 1fr;
-    grid-template-rows: 80px 80px 1fr 80px;
+    grid-template-rows: 80px 50px 1fr 40px;
     grid-template-areas:
       "nav"
       "sidebar"
@@ -27,29 +27,3 @@
 
 }
 
-.navbar {
-  grid-area: nav;
-  border-radius: $borderRadius;
-  background-color: $backgroundColorComponent;
-}
-
-.sidebar {
-  grid-area: sidebar;
-  overflow-y: auto;
-  border-radius: $borderRadius;
-  background-color: $backgroundColorComponent;
-}
-
-.content {
-  grid-area: main;
-  overflow-y: auto;
-  border-radius: $borderRadius;
-  background-color: $backgroundColorComponent;
-  padding: 1rem;
-}
-
-.footer {
-  grid-area: footer;
-  border-radius: $borderRadius;
-  background-color: $backgroundColorComponent;
-}
