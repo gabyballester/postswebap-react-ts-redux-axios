@@ -1,10 +1,10 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { getPosts } from '../../redux/effects/Posts';
-import { Post } from '../../redux/interfaces/PostInterface';
-import { AppState } from '../../redux/store';
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../../redux/effects/Posts";
+import { Post } from "../../redux/interfaces/PostInterface";
+import { AppState } from "../../redux/store";
 
-const Content: React.FC  = () => {
+const Content: React.FC = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -19,7 +19,6 @@ const Content: React.FC  = () => {
       <p>{post.body}</p>
     </div>
   ));
-
 
   return <div>{postItems}</div>;
 };
