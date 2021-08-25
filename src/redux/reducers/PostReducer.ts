@@ -1,11 +1,14 @@
 import {
   GET_POSTS,
-  GetPostsStateType,
+  REMOVE_POST,
+  PostsStateType,
   PostActionTypes,
 } from "../types/PostTypes";
 
+import { Post } from "../interfaces/PostInterface";
+
 //inicializo el estado de tipo GetPostsStateType
-const initialStateGetPosts: GetPostsStateType = {
+const initialStateGetPosts: PostsStateType = {
   posts: [],
 };
 
@@ -13,7 +16,7 @@ const initialStateGetPosts: GetPostsStateType = {
 export const getPostsReducer = (
   state = initialStateGetPosts,
   action: PostActionTypes
-): GetPostsStateType => {
+): PostsStateType => {
   switch (action.type) {
     case GET_POSTS:
       // devuelve el estado más el payload
@@ -21,6 +24,15 @@ export const getPostsReducer = (
         ...state,
         posts: action.payload,
       };
+    case REMOVE_POST:
+      const newPostArray: Post[] = state.posts.filter(
+        (post) => post.id !== action.postid
+      );
+      return {
+        ...state,
+        posts: newPostArray,
+      };
+
     default:
       return state;
   }

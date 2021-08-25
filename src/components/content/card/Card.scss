@@ -62,27 +62,39 @@
 .button {
   display: flex;
   justify-content: center;
-  background-color: #4CAF50;
-  /* Green */
-  border: none;
   color: white;
   padding: 3px 20px;
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 10px;
+  border-radius: 5px;
   font-size: $text;
+  width: 20%;
 }
 
 .button:hover {
   opacity: .8;
+  font-weight: bold;
 }
 
 .edit {
-  background-color: #008CBA;
-  margin-right: 15px;
+  background-color: $colorBlue;
+  border: 3px solid $colorBlue;
+  margin-right:15px;
 }
 
 .delete {
-  background-color: #f44336;
+  background-color: $colorRed;
+  border: 3px solid $colorRed;
+  margin-left:15px;
+}
+
+@media only screen and (max-width: $mobileScreen) {
+  .button {
+    display: block;
+    width: 100%;
+    margin: 0;
+  }
+  .edit {margin-right:5px;}
+  .delete {margin-left:5px;}
 }

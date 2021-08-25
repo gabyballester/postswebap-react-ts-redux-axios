@@ -6,8 +6,8 @@
   padding: $globalGap;
   grid-gap: $globalGap;
   background-color: $backgroundColor;
-  grid-template-columns: 130px 1fr 1fr 1fr;
-  grid-template-rows: 80px 2fr 0.2fr;
+  grid-template-columns: 80px 1fr 1fr 1fr;
+  grid-template-rows: 50px 1fr 30px;
   grid-template-areas:
     "nav nav nav nav"
     "sidebar main main main"
