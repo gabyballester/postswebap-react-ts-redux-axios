@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { getPosts } from "../../redux/effects/Posts";
+import { getPosts } from "../../redux/action-creators/Posts";
 import { Post } from "../../redux/interfaces/PostInterface";
 import { AppState } from "../../redux/store";
 
