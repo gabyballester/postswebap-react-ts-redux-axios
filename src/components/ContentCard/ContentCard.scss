@@ -1,0 +1,39 @@
+@import '../../assets/scss/_variables.scss';
+
+
+.post-card{
+  border: 5px solid $grayLight;
+  border-radius: 10px;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+.post-card:hover{
+  box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+  -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.75);
+}
+
+.post-card > *{
+  margin-bottom: 10px;
+}
+
+.post-title{
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.post-body:first-letter{
+  text-transform: capitalize;
+}
+
+.post-body{
+text-align: justify;
+  text-justify: inter-word;
+}
+
+.post-info{
+  display:flex;
+  flex-direction: row;
+  justify-content: space-between;
+}

@@ -1,0 +1,8 @@
+@import "../../assets/scss/_variables.scss";
+
+.sidebar {
+  grid-area: sidebar;
+  overflow-y: auto;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+}

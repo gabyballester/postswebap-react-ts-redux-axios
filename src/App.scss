@@ -1,0 +1,55 @@
+@import "./assets/scss/_variables.scss";
+
+.container {
+  display: grid;
+  height: 100vh;
+  padding: $globalGap;
+  grid-gap: $globalGap;
+  background-color: $backgroundColor;
+  grid-template-columns: 130px 1fr 1fr 1fr;
+  grid-template-rows: 80px 2fr 0.2fr;
+  grid-template-areas:
+    "nav nav nav nav"
+    "sidebar main main main"
+    "sidebar footer footer footer";
+}
+
+@media only screen and (max-width: $mobileScreen) {
+  .container {
+    grid-template-columns: 1fr;
+    grid-template-rows: 80px 80px 1fr 80px;
+    grid-template-areas:
+      "nav"
+      "sidebar"
+      "main"
+      "footer";
+  }
+
+}
+
+.navbar {
+  grid-area: nav;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  overflow-y: auto;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+}
+
+.content {
+  grid-area: main;
+  overflow-y: auto;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+  padding: 1rem;
+}
+
+.footer {
+  grid-area: footer;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+}

@@ -1,0 +1,8 @@
+@import "../../assets/scss/_variables.scss";
+
+.footer{
+  grid-area: footer;
+  border-radius: $borderRadius;
+  background-color: $backgroundColorComponent;
+}
+

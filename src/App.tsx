@@ -1,12 +1,18 @@
-// components
+import Navbar from "./components/navbar";
+import Sidebar from "./components/sidebar";
 import Content from "./components/content";
-
-import "./App.css";
+import Footer from "./components/footer";
+import "./App.scss";
 
 function App() {
   return (
     <div className="App">
-      <Content />
+      <div className="container">
+        <Navbar/>
+        <Sidebar/>
+        <Content/>
+        <Footer/>
+      </div>
     </div>
   );
 }

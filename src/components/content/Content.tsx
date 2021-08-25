@@ -1,25 +1,30 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../../redux/action-creators/Posts";
-import { Post } from "../../redux/interfaces/PostInterface";
 import { AppState } from "../../redux/store";
+
+import ContentCard from "../ContentCard/ContentCard";
 
 const Content: React.FC = () => {
   const dispatch = useDispatch();
+  const { posts } = useSelector((state: AppState) => state.posts);
 
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
 
-  const posts = useSelector((state: AppState) => state.posts);
-
-  const postItems = posts.posts.map((post: Post) => (
-    <div key={post.id}>
-      <h1>{post.title}</h1>
-      <p>{post.body}</p>
+  return (
+    <div className="content">
+      <h3 className="content-title">List of posts</h3>
+      <div className="content-posts">
+        {posts ? (
+          posts.map((post, index) => <ContentCard post={post} key={index} />)
+        ) : (
+          <p>No posts</p>
+        )}
+      </div>
     </div>
-  ));
-
-  return <div>{postItems}</div>;
+  );
 };
+
 export default Content;
