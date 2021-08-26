@@ -1,21 +1,32 @@
+import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removePost } from "../../../redux/action-creators/Posts";
 import { Post } from "../../../redux/interfaces/PostInterface";
+import EditForm from "../../modalPopup/EditForm";
 import "./Card.scss";
 
 interface Props {
   post: Post;
 }
 
-const ContentCard: React.FC<Props> = ({ post }) => {
-  const {title, body, id, userId} = post;
+const Card: React.FC<Props> = ({ post }) => {
+  const { title, body, id, userId } = post;
   const dispatch = useDispatch();
 
-  const deletePost = (id: number) => {
-    console.log("borrando post");
+  const [showModal, setShowModal] = useState<boolean>(false);
 
+  const deletePost = (id: number) => {
     dispatch(removePost(id));
   };
+
+  const openModal = () => {
+    setShowModal(true);
+  };
+
+  const closeModal = () => {
+    setShowModal(false);
+  };
+
 
   return (
     <div className="post-card">
@@ -26,13 +37,16 @@ const ContentCard: React.FC<Props> = ({ post }) => {
         <p className="post-userid">Userid: {userId}</p>
       </div>
       <div className="action-buttons">
-        <button className="button edit">Edit</button>
+        <button className="button edit" onClick={() => openModal()}>
+          Edit
+        </button>
         <button className="button delete" onClick={() => deletePost(id)}>
           Delete
         </button>
       </div>
+      {showModal && <EditForm post={post} closeModal={closeModal} />}
     </div>
   );
 };
 
-export default ContentCard;
+export default Card;

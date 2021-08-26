@@ -1,0 +1,79 @@
+@import "../../assets/scss/_variables.scss";
+
+.modal{
+  max-width: 500px;
+}
+
+.modal-header{
+  margin-bottom: 1rem;
+}
+
+.modal-header-title {
+  font-size: $modalTitle;
+  font-weight: bolder;
+  
+}
+
+.modal-body{
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  input, textarea{
+    width: 100%;
+    margin-left: 1rem;
+    padding: 10px;
+  }
+  textarea{
+    height: 100px;
+    
+  }
+}
+
+.modal-row{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 1rem;
+}
+
+.modal-post-text {
+  font-size: $title;
+  font-weight: bold;
+  width: 30px;
+}
+
+.action-buttons{
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.button-modal {
+  color: white;
+  padding: 3px 20px;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: $borderRadius;
+  font-size: $text;
+  background-color: $colorGreen;
+  border: 3px solid $colorGreen;
+  width: 100%;
+}
+
+
+
+.btn-modal-update{
+  background-color: $colorGreen;
+  border: 3px solid $colorGreen;
+}
+
+.btn-modal-cancel{
+  margin-left: 1rem;
+  background-color: $colorRed;
+  border: 3px solid $colorRed;
+}
+
+.button-modal:hover {
+  opacity: .8;
+  
+}
