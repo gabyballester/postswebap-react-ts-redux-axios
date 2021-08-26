@@ -1,5 +1,5 @@
-import { Post } from "../../redux/interfaces/PostInterface";
-import Modal from "./Modal";
+import { Post } from "../../../../redux/interfaces/PostInterface";
+import Modal from "../../../modalPopup/Modal";
 import "./EditForm.scss";
 import { useState } from "react";
 

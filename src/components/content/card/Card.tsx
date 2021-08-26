@@ -2,7 +2,7 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { removePost } from "../../../redux/action-creators/Posts";
 import { Post } from "../../../redux/interfaces/PostInterface";
-import EditForm from "../../modalPopup/EditForm";
+import EditForm from "./editForm/EditForm";
 import "./Card.scss";
 
 interface Props {
