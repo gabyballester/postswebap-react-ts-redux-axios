@@ -5,6 +5,7 @@
   border-radius: $borderRadius;
   background-color: $backgroundColorComponent;
   display: flex;
+  flex-direction: row;
   justify-content: flex-start;
   align-items: center;
   padding-left: 4rem;
@@ -12,7 +13,9 @@
 
 @media only screen and (max-width: $mobileScreen) {
   .navbar {
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    padding-left: 0;
   }
 }
