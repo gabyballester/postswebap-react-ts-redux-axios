@@ -3,7 +3,7 @@
 
 .post-card {
   border: 5px solid $grayLight;
-  border-radius: 10px;
+  border-radius: $borderRadius;
   padding: 1rem;
   height: auto;
   display: flex;
@@ -67,7 +67,7 @@
   text-align: center;
   text-decoration: none;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: $borderRadius;
   font-size: $text;
   width: 20%;
 }

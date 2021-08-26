@@ -2,6 +2,7 @@
 
 //font-size
 $title: 13px;
+$modalTitle: 1rem;
 $text: 12px;
 
 //screen sizes
@@ -11,10 +12,11 @@ $mobileScreen: 680px;
 $grayLight: #e3e5f0;
 $backgroundColor: $grayLight;
 $backgroundColorComponent:white;
+$colorRed: #f44336;
+$colorBlue: #008CBA;
+$colorGreen: green;
 
 //spacing
 $borderRadius: 3px;
 $globalGap: 0.4rem;
 
-$colorRed: #f44336;
-$colorBlue: #008CBA;
