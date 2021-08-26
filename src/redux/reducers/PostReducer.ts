@@ -1,6 +1,7 @@
 import {
   GET_POSTS,
   REMOVE_POST,
+  UPDATE_POST,
   PostsStateType,
   PostActionTypes,
 } from "../types/PostTypes";
@@ -26,11 +27,20 @@ export const getPostsReducer = (
       };
     case REMOVE_POST:
       const newPostArray: Post[] = state.posts.filter(
-        (post) => post.id !== action.postid
+        (post) => post.id !== action.payload
       );
       return {
         ...state,
         posts: newPostArray,
+      };
+    case UPDATE_POST:
+      const postArrayBeforeUpdate: Post[] = state.posts.map(
+        (post) => post.id !== action.payload.id ? post:  post = action.payload
+      );
+
+      return {
+        ...state,
+        posts: postArrayBeforeUpdate
       };
 
     default:

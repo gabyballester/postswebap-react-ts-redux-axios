@@ -2,6 +2,8 @@ import { Post } from "../../../../redux/interfaces/PostInterface";
 import Modal from "../../../modalPopup/Modal";
 import "./EditForm.scss";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
+import { updatePost } from "../../../../redux/action-creators/Posts";
 
 interface Props {
   post: Post;
@@ -9,25 +11,39 @@ interface Props {
 }
 
 type EditPost = {
+  id: number;
+  userId: number
   title: string;
   body: string;
 };
 
 const EditForm: React.FC<Props> = ({ post, closeModal }) => {
   const [data, setData] = useState<EditPost>({
+    id : post.id,
+    userId: post.userId,
     title: post.title,
     body: post.body,
   });
 
-  type handlerElement = React.ChangeEvent<HTMLTextAreaElement> | React.ChangeEvent<HTMLInputElement>;
+  const dispatch = useDispatch();
+
+  type handlerElement =
+    | React.ChangeEvent<HTMLTextAreaElement>
+    | React.ChangeEvent<HTMLInputElement>;
 
   const handleChange = (e: handlerElement) => {
     setData({ ...data, [e.target.name]: e.target.value });
   };
 
+  const handlerSubmit = (e: React.BaseSyntheticEvent) => {
+    e.preventDefault();
+    dispatch(updatePost(data))
+    closeModal();
+  };
+
   return (
     <Modal closeModal={closeModal}>
-      <form>
+      <form onSubmit={(e) => handlerSubmit(e)}>
         <div className="modal-header">
           <p className="modal-header-title">Edit post</p>
         </div>

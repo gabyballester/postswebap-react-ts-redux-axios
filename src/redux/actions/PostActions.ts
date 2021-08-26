@@ -1,23 +1,34 @@
 // importo los tipos get posts y post action types
-import { GET_POSTS, REMOVE_POST, PostActionTypes } from '../types/PostTypes';
+import {
+  GET_POSTS,
+  REMOVE_POST,
+  UPDATE_POST,
+  PostActionTypes,
+} from "../types/PostTypes";
 // importo el interfaz de 1 post
-import { Post } from '../interfaces/PostInterface';
+import { Post } from "../interfaces/PostInterface";
 
 // getPostsAction acepta un tipo array de post
 // a su vez le digo que es un tipo postactiontypes
-export const getPostsAction=(posts: Post[]): PostActionTypes => {
+export const getPostsAction = (posts: Post[]): PostActionTypes => {
   //devuelve el tipo getposts y payload posts
   return {
     type: GET_POSTS,
-    payload: posts
+    payload: posts,
   };
 };
 
-export const removePostAction=(postid: number): PostActionTypes => {
+export const removePostAction = (postid: number): PostActionTypes => {
   //devuelve el tipo getposts y payload posts
   return {
     type: REMOVE_POST,
-    postid
+    payload: postid,
   };
 };
 
+export const updatePostAction = (post: Post): PostActionTypes => {
+  return {
+    type: UPDATE_POST,
+    payload: post,
+  };
+};
