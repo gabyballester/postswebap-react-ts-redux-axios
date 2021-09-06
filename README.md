@@ -19,7 +19,7 @@ Installs the dependencies needed for development
 
 Launches the development environment to show up a realtime version of the app.
 #### 🔗 Production environment 
-The project repo is connected to Netlify so each timeonce any changes are pushed into the master branch, Netlify will deploy an updated the new version of the repo code on its online space.
+The project repo is connected to Netlify so each time any changes are pushed into the master branch, Netlify will deploy and update a new version of the repo code on its online space.
 
 #### Layout and styles
 - The styles are in a _variables.scss file using the sass library.
